@@ -27,16 +27,16 @@ class ToDoApp:
 
         self.add_button = tk.Button(self.root, text="Add Task", command=self.add_task)
         self.add_button.pack()
-        self.view_button = tk.Button(self.root, text="View Tasks", command=self.view_tasks)
-        self.view_button.pack()
         self.finish_button = tk.Button(self.root, text="Finish Task", command=self.finish_task)
         self.finish_button.pack()
         self.delete_button = tk.Button(self.root, text="Delete Task", command=self.delete_task)
         self.delete_button.pack()
-        self.view_finished_button = tk.Button(self.root, text="View Finished Tasks", command=self.view_finished_tasks)
-        self.view_finished_button.pack()
         self.edit_button = tk.Button(self.root, text="Edit Task", command=self.edit_task)
         self.edit_button.pack()
+        self.view_finished_button = tk.Button(self.root, text="View Finished Tasks", command=self.view_finished_tasks)
+        self.view_finished_button.pack()
+        self.view_button = tk.Button(self.root, text="View Tasks", command=self.view_tasks)
+        self.view_button.pack()
 
         self.load_tasks()
         
@@ -77,6 +77,8 @@ class ToDoApp:
         self.finish_button.config(state='normal')
         self.delete_button.config(state='normal')
         self.edit_button.config(state='normal')
+        self.edit_button.config(state='normal')
+
 
     def finish_task(self):
         finished = self.task_list.curselection()
@@ -131,6 +133,7 @@ class ToDoApp:
         self.add_button.config(state='disabled')
         self.finish_button.config(state='disabled')
         self.delete_button.config(state='disabled')
+        self.edit_button.config(state='disabled')
 
 root = tk.Tk()
 app = ToDoApp(root)
